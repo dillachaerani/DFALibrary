@@ -1,12 +1,26 @@
-{{-- @extends('layouts.app') --}}
+@extends('layouts.auth-boxed')
 
-{{-- @section('content') --}}
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+@php $lang = "auth_lang"; @endphp
 
+@section('css')
+@endsection
+
+@section('styles')
+@endsection
+
+<div class="form-container outer">
+    <div class="form-form">
+        <div class="form-form-wrap">
+            <div class="form-container">
+                <div class="form-content">
+
+                    <h1 class="">@lang('Sign Up')</h1>
+                    <p class="">@lang('Sign Up to your account.')</p>
+                    <div class="text-left">
+                        @include('components.flash-notification')
+                        @include('components.flash-notification-error')
+                    </div>
+                    
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
@@ -61,12 +75,22 @@
                             </div>
                         </div>
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
+                        <div class="d-sm-flex justify-content-between">
+                            <div class="field-wrapper">
+                                <button type="submit" class="btn btn-primary">@lang('Register')</button>
                             </div>
+                        </div>
+                        {!! Form::close() !!}
+                        <div class="division mb-0">
+                            <span>
+                                <br>
+                                <small><a href="/login" class="text-primary"><i class=""></i> @lang('Sudah Punya Akun')</a></small>
+                                <hr>
+                                <small>
+                                    <strong>{{ config('app.name') }}</strong> <br>
+                                    <strong>Copyright 2023 © All rights reserved.</strong>
+                                </small>
+                            </span>
                         </div>
                     </form>
                 </div>

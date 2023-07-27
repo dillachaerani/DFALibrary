@@ -46,6 +46,7 @@ class RouteServiceProvider extends ServiceProvider
         $this->mapWebRoutes();
         // ============================================== BACKEND ==============================================
         Route::group(['prefix' => 'admin'], function () {
+            $this->bookRoute();
             Route::group(['prefix' => 'user-management'], function () {
                 $this->userRoute();
                 $this->roleRoute();
@@ -111,5 +112,12 @@ class RouteServiceProvider extends ServiceProvider
             ->middleware(['web', 'auth', 'verify-user', 'role:developer|superadmin'])
             ->namespace($this->namespace)
             ->group(base_path('routes/appSettingRoute.php'));
+    }
+    protected function bookRoute()
+    {
+        Route::middleware(['web', 'auth', 'verify-user'])
+            ->prefix('books')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/bookRoute.php'));
     }
 }

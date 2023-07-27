@@ -4,7 +4,7 @@
         <ul class="navbar-item theme-brand flex-row  text-center">
             <li class="nav-item theme-logo mr-4">
                 <a href="/">
-                    <img src="{{asset('storage/img/logo_waroeng_90.png')}}" class="navbar-logo" alt="logo" style="width: auto">
+                    <img src="{{asset('storage/img/logo.png')}}" class="navbar-logo" alt="logo" style="width: auto">
                 </a>
             </li>
         </ul>

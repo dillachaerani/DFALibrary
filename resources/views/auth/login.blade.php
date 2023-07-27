@@ -72,7 +72,7 @@
                     <div class="division mb-0">
                         <span>
                             <br>
-                            <small><a href="/" class="text-primary"><i class="fas fa-home"></i> @lang('Back to home')</a></small>
+                            <small><a href="/register" class="text-primary"><i class=""></i> @lang('Belum Punya Akun')</a></small>
                             <hr>
                             <small>
                                 <strong>{{ config('app.name') }}</strong> <br>
